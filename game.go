@@ -18,3 +18,22 @@ func selectRandomWord(category string) string {
 	return words[rand.Intn(len(words))]
 }
 
+func displayWord(word string, guessedLetters []rune) {
+	for _, letter := range word {
+		if contains(guessedLetters, letter) {
+			print(string(letter), " ")
+		} else {
+			print("_ ")
+		}
+	}
+	println()
+}
+
+func displayGuessedLetters(guessedLetters []rune) {
+	print("Guessed letters: ")
+	for _, letter := range guessedLetters {
+		print(string(letter), " ")
+	}
+	println()
+}
+
